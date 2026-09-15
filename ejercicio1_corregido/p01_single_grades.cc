@@ -1,19 +1,15 @@
-// Universidad de La Laguna
-// Escuela Superior de Ingenieria y Tecnologia
-// Grado en Ingenieria Informatica
-// Asignatura: Computabilidad y Algoritmia
-// Curso: 2º
-// Practica 1: Contenedores asociativos
-// Autor: Alexandro Jesus Dorta Mirena
-// Correo: alu0101802961@ull.edu.es
-// Fecha: 10/09/2026
-// Archivo makefile: makefile.
-// Contiene la funcion main del proyecto que usa las clases X e Y
-// para ... (indicar brevemente el objetivo)
-// Referencias:
-// Enlaces de interes
-// Historial de revisiones
-// 12/09/2023 - Creacion (primera version) del codigo
+/* Universidad de La Laguna
+Escuela Superior de Ingenieria y Tecnologia
+Grado en Ingenieria Informatica
+Asignatura: Computabilidad y Algoritmia
+Curso: 2º
+Practica 1: Contenedores asociativos
+Autor: Alexandro Jesus Dorta Mirena
+Correo: alu0101802961@ull.edu.es
+Fecha: 10/09/2026
+Objetivo: implementacion de los metodos de las clases como leer ficheros, clasificar informacion y sus getters
+ademas que hay una funcion para mostrar la informacion del programa por si el usuario lo necesita
+*/
 
 #include "p01_single_grades.h"
 
@@ -54,8 +50,8 @@ void LectorFichero::MostrarCalificacionLeida(){
   }
 }
 
-void GestorNotas::OrdenarCalificacion(const LectorFichero& Calificacion_leida){
-  for(const auto& [alu, nota] : Calificacion_leida.GetCalificacionLeida()){
+void GestorNotas::OrdenarCalificacion(const LectorFichero& calificaciones_leida){
+  for(const auto& [alu, nota] : calificaciones_leida.GetCalificacionLeida()){
     if(calificaciones_.find(alu) == calificaciones_.end()){
       calificaciones_.insert(std::make_pair(alu, nota));
     } else{

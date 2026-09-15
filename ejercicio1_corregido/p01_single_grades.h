@@ -7,13 +7,9 @@
 // Autor: Alexandro Jesus Dorta Mirena
 // Correo: alu0101802961@ull.edu.es
 // Fecha: 10/09/2026
-// Archivo makefile: makefile.
-// Contiene la funcion main del proyecto que usa las clases X e Y
-// para ... (indicar brevemente el objetivo)
-// Referencias:
-// Enlaces de interes
-// Historial de revisiones
-// 12/09/2023 - Creacion (primera version) del codigo
+// Objetivo: creacion de las clases para cumplir con el principio de POO donde hay dos clases, una
+// para leer el fichero y mostrar dicha informacion del fichero, ademas la otra clase se encarga de 
+// clasificar las notas y estructurarlas
 
 #ifndef P01_SINGLE_GRADES_H
 #define P01_SINGLE_GRADES_H
@@ -46,7 +42,7 @@ class GestorNotas{
     //Getter
     const std::map<std::string, double>& GetCalificacion() const;
     //Metodos
-    void OrdenarCalificacion(const LectorFichero& Calificacion_leida);
+    void OrdenarCalificacion(const LectorFichero& calificaciones_leida);
     void MostrarCalificacionClasificada();
 
 
