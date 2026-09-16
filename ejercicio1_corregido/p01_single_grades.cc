@@ -16,6 +16,7 @@ ademas que hay una funcion para mostrar la informacion del programa por si el us
 void MostrarInformacion(){
   std::cout << "El objetivo del programa es clasificar la mejor nota de cada alumno. Para que funcione este programa ha de recibir " << std::endl;
   std::cout << "por parametro  el nombre del fichero en formato .txt para hacer la calificacion y mostrarla por pantalla. " << std::endl;
+  std::cout << "si en otro caso busca un alumno tendra que escribir ./p01_single_grades grades.txt --search [alu] " << std::endl;
 }
 
 const std::multimap<std::string, double>& LectorFichero::GetCalificacionLeida() const{
@@ -70,5 +71,15 @@ void LectorFichero::InsertarNuevoCalificacion(std::string alu, double nota){
   calificaciones_leida_.insert(std::make_pair(alu, nota));
 }
 
-
+void GestorNotas::BuscarUsuario(const std::string& alu_buscar){
+  for(const auto& [alu, nota] : calificaciones_){
+    if(calificaciones_.find(alu_buscar) == calificaciones_.end() ){
+      
+    } else if (alu_buscar == alu) {
+      std::cout << alu << " " << nota << std::endl;
+      return;
+    }
+  }
+  std::cout << "No se ha encontrado el estudiante " << alu_buscar << std::endl;
+}
 

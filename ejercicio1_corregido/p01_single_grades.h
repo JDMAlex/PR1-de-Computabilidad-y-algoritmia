@@ -44,6 +44,7 @@ class GestorNotas{
     //Metodos
     void OrdenarCalificacion(const LectorFichero& calificaciones_leida);
     void MostrarCalificacionClasificada();
+    void BuscarUsuario(const std::string& alu);
 
 
   private:
@@ -52,6 +53,7 @@ class GestorNotas{
 
 
 void MostrarInformacion();
+
 
 
 #endif

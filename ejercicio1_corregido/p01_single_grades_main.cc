@@ -14,9 +14,10 @@ si quiere agregar a un nuevo usuario o una nueva nota
 #include "p01_single_grades.h"
 
 int main(int argc, char* argv[]){
-  if( argc == 1){
+  if(argc == 1){
     std::cerr << "Modo de empleo: " << argv[0] << " [nombre_fichero] " << std::endl;
-    std::cerr << "Pruebe 'p01_single_grades --help' para mas informacion.";
+    std::cerr << "Pruebe 'p01_single_grades --help' para mas informacion." << std::endl;
+    std::cerr << "si busca un alumno pruebe: /p01_single_grades grades.txt --search alu0101010101" << std::endl;
     return 1;
   }
   std::string argumento1 = argv[1];
@@ -35,6 +36,20 @@ int main(int argc, char* argv[]){
   GestorNotas calificacion_clasificada;
   calificacion_clasificada.OrdenarCalificacion(Calificacion_leida);
   calificacion_clasificada.MostrarCalificacionClasificada();
+
+  std::cout << std::endl;
+
+  if(argc == 4){
+    std::string argumento2 = argv[2];
+    std::string alu_buscar = argv[3];
+    if(argc == 4 && argumento2 == "--search"){
+      std::cout << "-buscando alu-" << std::endl;
+      calificacion_clasificada.BuscarUsuario(alu_buscar);
+    }
+  }
+
+
+  std::cout << std::endl;
 
   std::cout << "¿Desea insertar una nueva nota? ¿ si o no ?" << std::endl;
   std::string respuesta_user;
